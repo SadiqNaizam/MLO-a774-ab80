@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import defaultTheme from 'tailwindcss/defaultTheme';
 
 export default {
 	darkMode: ["class"],
@@ -61,13 +62,24 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+        // PRD specific color names for direct utility class usage
+        fbPageBackground: 'hsl(var(--background))', // PRD background: #F0F2F5
+        fbSurface: 'hsl(var(--card))', // PRD surface: #FFFFFF
+        fbSidebar: 'hsl(var(--sidebar-background))', // PRD sidebar: #FFFFFF
+        fbPrimaryText: 'hsl(var(--foreground))', // PRD primaryText: #1C1E21
+        fbSecondaryText: 'hsl(var(--muted-foreground))', // PRD secondaryText: #606770
+        fbAccentBlue: 'hsl(var(--primary))', // PRD accentBlue: #1877F2
+        fbBorder: 'hsl(var(--border))', // PRD border: #DADDE1
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
 			},
+      fontFamily: {
+        sans: ['var(--font-sans)', ...defaultTheme.fontFamily.sans],
+      },
 			keyframes: {
 				'accordion-down': {
 					from: {
